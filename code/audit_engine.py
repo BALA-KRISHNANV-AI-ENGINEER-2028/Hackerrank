@@ -7,10 +7,22 @@ from typing import Dict, List, Tuple, Set, Optional, Any
 from datetime import datetime
 import re
 
-from code.identity import IdentityResolver
-from code.evidence_parser import EvidenceParser, Observation
-from code.policy_engine import PolicyEngine
-from code.planner import Planner
+import sys
+import os
+code_dir = os.path.dirname(os.path.abspath(__file__))
+if code_dir not in sys.path:
+    sys.path.insert(0, code_dir)
+
+try:
+    from identity import IdentityResolver
+    from evidence_parser import EvidenceParser, Observation
+    from policy_engine import PolicyEngine
+    from planner import Planner
+except ImportError:
+    from code.identity import IdentityResolver
+    from code.evidence_parser import EvidenceParser, Observation
+    from code.policy_engine import PolicyEngine
+    from code.planner import Planner
 
 
 def is_valid_deletion_request(text: str) -> bool:

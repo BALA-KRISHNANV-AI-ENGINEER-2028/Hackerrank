@@ -10,10 +10,18 @@ import json
 import os
 import re
 import sqlite3
+import sys
 import zlib
 
 
-from code.identity import IdentityResolver
+code_dir = os.path.dirname(os.path.abspath(__file__))
+if code_dir not in sys.path:
+    sys.path.insert(0, code_dir)
+
+try:
+    from identity import IdentityResolver
+except ImportError:
+    from code.identity import IdentityResolver
 
 
 class Observation:

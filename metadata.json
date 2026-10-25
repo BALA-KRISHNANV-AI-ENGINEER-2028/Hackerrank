@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Ghost Data Still Exists",
+  "description": "AI-powered deletion-audit engine, forensic evidence investigation, and safe remediation planner for HackerRank Orchestrate.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
